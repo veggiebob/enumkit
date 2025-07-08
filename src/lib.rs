@@ -44,7 +44,7 @@ pub fn values_macro_derive(input: TokenStream) -> TokenStream {
     }
 }
 
-#[proc_macro_derive(Mapping)]
+#[proc_macro_derive(EnumMapping)]
 pub fn mapping_macro_derive(input: TokenStream) -> TokenStream {
     let ast: DeriveInput = syn::parse(input).unwrap();
     let name = &ast.ident;
@@ -97,6 +97,7 @@ pub fn mapping_macro_derive(input: TokenStream) -> TokenStream {
             })
             .collect();
 
+        // todo: use serde derives when the "serde" feature is enabled on this crate
         let values_impl = quote! {
             #[derive(Copy, Clone, Serialize, Deserialize)]
             #visibility struct #map_name <T>([T; #variant_count]);
@@ -192,16 +193,5 @@ pub fn mapping_macro_derive(input: TokenStream) -> TokenStream {
         values_impl.into()
     } else {
         panic!("Mapping macro can only be applied to enums.");
-    }
-}
-
-
-#[cfg(test)]
-mod test {
-    #[test]
-    pub fn test() {
-        let mapping = [1, 2, 3, 4];
-        let mut v: Vec<i32> = mapping.into_iter().collect();
-        if let Some(x) = v.pop() {}
     }
 }
