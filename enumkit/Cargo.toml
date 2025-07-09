@@ -1,0 +1,19 @@
+[package]
+name = "enumkit"
+version = "0.0.1"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/veggiebob/enumkit"
+homepage = "https://github.com/veggiebob/enumkit"
+description = "Convenient traits for working with enums."
+readme = "README.md"
+keywords = ["enum", "extension", "enumkit"]
+categories = ["rust-patterns"]
+
+[dependencies]
+enumkit_derive = { path = "../enumkit_derive", features = ["serde"] }
+serde = { version = "1.0", optional = true, features = ["derive"] }
+
+[features]
+default = []
+serde = ["dep:serde", "enumkit_derive/serde"]
