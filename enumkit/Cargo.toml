@@ -7,7 +7,7 @@ repository = "https://github.com/veggiebob/enumkit"
 homepage = "https://github.com/veggiebob/enumkit"
 description = "Convenient traits for working with enums."
 readme = "README.md"
-keywords = ["enum", "extension", "enumkit"]
+keywords = ["enum", "extension"]
 categories = ["rust-patterns"]
 
 [dependencies]

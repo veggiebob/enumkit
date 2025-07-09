@@ -21,7 +21,7 @@ enumkit-derive = "<version>"
 Then derive the macros on your enum:
 
 ```rust
-use enum_tools_derive::{EnumValues, EnumMapping};
+use enumkit::{EnumValues, EnumMapping};
 
 #[derive(EnumValues, EnumMapping)]
 enum Mode {

@@ -26,7 +26,7 @@ enumkit = "<version>"
 Then derive traits for your enum:
 
 ```rust
-use enum_tools::{EnumValues, EnumMapping};
+use enumkit::{EnumValues, EnumMapping};
 
 #[derive(EnumValues, EnumMapping, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 enum State {

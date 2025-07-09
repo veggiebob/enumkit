@@ -26,7 +26,8 @@ A proc macro crate providing:
 - `#[derive(EnumValues)]`
 - `#[derive(EnumMapping)]`
 
-These generate methods and data structures that work with the `enumkit` traits.
+These derive the `EnumValues` and `EnumMapping` traits for enums that consist entirely of unit variants (i.e., variants with no associated data).
+They are also exposed through the `enumkit` crate.
 
 ➡️ See [`enumkit-derive/README.md`](enumkit-derive/README.md) for usage instructions.
 
@@ -34,7 +35,7 @@ These generate methods and data structures that work with the `enumkit` traits.
 
 ## Getting Started
 
-Most users will want to depend on both crates:
+To use the `enumkit` crate, add it to your `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -44,8 +45,7 @@ enumkit = "<version>"
 You can then use the provided derive macros and traits in your code:
 
 ```rust
-use enum_tools::EnumMapping;
-use enum_tools_derive::{EnumValues, EnumMapping};
+use enumkit::{EnumValues, EnumMapping};
 
 #[derive(EnumValues, EnumMapping)]
 enum Example {
