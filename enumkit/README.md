@@ -1,6 +1,8 @@
 # enumkit
 
-`enumkit` provides traits and utilities for working with enums that consist only of unit variants. It works hand-in-hand with its companion crate, [`enumkit_derive`](https://crates.io/crates/enumkit_derive), which provides `#[derive(EnumValues)]` and `#[derive(EnumMapping)]` proc macros.
+`enumkit` provides traits and utilities for working with enums that consist only of unit variants. 
+It works hand-in-hand with its companion crate, [`enumkit_derive`](https://crates.io/crates/enumkit-derive), 
+which provides `#[derive(EnumValues)]` and `#[derive(EnumMapping)]` proc macros.
 
 ---
 

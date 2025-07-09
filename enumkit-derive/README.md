@@ -1,4 +1,4 @@
-# enumkit_derive
+# enumkit-derive
 
 This crate provides proc macros for use with [`enumkit`](https://crates.io/crates/enumkit):
 
@@ -15,7 +15,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-enumkit_derive = "<version>"
+enumkit-derive = "<version>"
 ````
 
 Then derive the macros on your enum:

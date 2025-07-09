@@ -1,10 +1,10 @@
 [package]
-name = "enumkit_derive"
+name = "enumkit-derive"
 version = "0.0.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/veggiebob/enumkit_derive"
-homepage = "https://github.com/veggiebob/enumkit_derive"
+repository = "https://github.com/veggiebob/enumkit"
+homepage = "https://github.com/veggiebob/enumkit"
 description = "Derive macros for enumkit."
 readme = "README.md"
 keywords = ["macro", "enum"]

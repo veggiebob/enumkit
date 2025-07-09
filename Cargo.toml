@@ -1,5 +1,5 @@
 [workspace]
 members = [
     "enumkit",
-    "enumkit_derive"
+    "enumkit-derive"
 ]
