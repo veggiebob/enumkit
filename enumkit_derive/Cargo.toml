@@ -1,0 +1,21 @@
+[package]
+name = "enumkit_derive"
+version = "0.0.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/veggiebob/enumkit_derive"
+homepage = "https://github.com/veggiebob/enumkit_derive"
+description = "Derive macros for enumkit."
+readme = "README.md"
+keywords = ["macro", "enum"]
+categories = ["rust-patterns"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "2.0"
+quote = "1.0"
+
+[features]
+serde = []
