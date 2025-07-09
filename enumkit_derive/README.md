@@ -1,19 +1,47 @@
-# Enumkit
+# enumkit_derive
 
-There are currently 2 derive macros: `EnumValues` and `EnumMapping`.
-Both are only intended to be used for enums which are exclusively unit variants, meaning they look something
-like this:
+This crate provides proc macros for use with [`enumkit`](https://crates.io/crates/enumkit):
+
+- `#[derive(EnumValues)]` – Adds a `values()` method that returns all unit enum variants.
+- `#[derive(EnumMapping)]` – Generates a struct mapping enum variants to values in a static array.
+
+These macros only work with enums composed **entirely of unit variants** (i.e., variants with no associated data).
+
+---
+
+## Usage
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+enumkit_derive = "<version>"
+````
+
+Then derive the macros on your enum:
 
 ```rust
-enum X {
-    A,
-    B,
-    C
+use enum_tools_derive::{EnumValues, EnumMapping};
+
+#[derive(EnumValues, EnumMapping)]
+enum Mode {
+    Fast,
+    Slow,
+    Sleep,
 }
 ```
 
-`EnumMapping` is used to provide iterators and constructors for a fixed-size static mapping from the variants
-to the user's type. If the name of your enum is `Enum`, it expands with these definitions:
-- `EnumMapping` - the data structure that holds the mapping. This has a similar API to `HashMap<Enum, T>`
-- `EnumMappingIntoIter`
-- `EnumMappingIter`
+See enumkit for the trait definitions and runtime behavior.
+
+---
+
+## Notes
+
+- These macros panic at compile time if used on non-unit enums.
+- Serialization support via `serde` is opt-in via feature flags in `enumkit`.
+
+---
+
+## License
+
+MIT or Apache-2.0
